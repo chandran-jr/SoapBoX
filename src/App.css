@@ -1,0 +1,16 @@
+*{
+  margin: 0;
+
+}
+
+.app{
+  background-color: whitesmoke;
+  height: 100vh;
+}
+
+.app__header{
+  background-color: white;
+  padding: 20px;
+  border-bottom: 3px solid rgb(153, 153, 250);
+  object-fit: contain;
+}
