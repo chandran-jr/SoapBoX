@@ -3,7 +3,9 @@
     max-width: 600px;
     margin: auto;
     background-color: white;
-    border: 2px solid rgb(138, 138, 241)
+    border: 2px solid rgb(138, 138, 241);
+    margin-bottom:30px;
+    margin-top: 15px;
 }
 
 .post__image{
@@ -21,6 +23,11 @@
     font-weight: normal;
     padding: 15px;
     margin-right: 15px;
+    
+}
+
+strong{
+    margin-right: 10px;
 }
 
 .post__avatar{
