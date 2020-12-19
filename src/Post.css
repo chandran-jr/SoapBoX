@@ -1,5 +1,12 @@
-.post__image{
 
+.post{
+    margin-top:10px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.post__image{
+    
     width: 100%;
     height: auto;
     object-fit: contain;
@@ -9,4 +16,18 @@
 .post__caption{
 
     font-weight: normal;
+    padding: 15px;
+    padding-left: 5px;
+}
+
+.post__avatar{
+    margin-right: 10px;
+}
+
+.post__header{
+    
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    padding-left: 5px;
 }

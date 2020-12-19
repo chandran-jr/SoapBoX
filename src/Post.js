@@ -8,7 +8,7 @@ function Post() {
 
             <div className="post__header">
 
-            <Avatar className="avatar"  alt="Govind" src="post.jpg"/>
+            <Avatar className="post__avatar"  alt="Govind" src="post.jpg"/>
 
             <h3>Username</h3>
 
