@@ -16,7 +16,7 @@
 .app__header{
   background-color: white;
   object-fit: contain;
-  border-bottom:2.5px solid rgb(131, 131, 245);
+  border-bottom:2px solid rgb(131, 131, 245);
   padding: 15px;
   padding-bottom: 5px;
 }
