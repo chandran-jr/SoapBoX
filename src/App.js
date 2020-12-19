@@ -5,6 +5,7 @@ import {db} from './firebase';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Button from '@material-ui/core/Button';
+import { Input } from '@material-ui/core';
 
 
 function getModalStyle() {
@@ -44,6 +45,10 @@ function App() {
   const [posts,setPosts] = useState([]);
   const [modalStyle] = React.useState(getModalStyle);
   const [open,setOpen] = useState(false);
+  const [username,setUsername] = useState('');
+  const [email,setEmail] = useState('');
+  const [password,setPassword] = useState('');
+
 
 
   useEffect(() => {
@@ -70,7 +75,34 @@ function App() {
 
       <div style={modalStyle} className={classes.paper}>
       
-      <h2>Modal</h2>
+      <center>
+        <img className= "app__headerImage" alt="modalogo" src="soapboxlogo.jpg" />
+
+      <Input
+      placeholder="Username"
+      type="text"
+      value={username}
+      onChange={(e) => setUsername(e.target.value)}
+      />
+
+      <Input
+      placeholder="Email"
+      type="email"
+      value={email}
+      onChange={(e) => setEmail(e.target.value)}
+      />
+
+      <Input
+      placeholder="Password"
+      type="password"
+      value={password}
+      onChange={(e) => setPassword(e.target.value)}
+      />
+
+      <Button onClick={signUp()}>Login</Button>
+
+
+      </center>
 
     </div>
 
