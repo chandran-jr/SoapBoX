@@ -35,6 +35,8 @@ const useStyles = makeStyles((theme) => ({
 
 const signUp = (event) => {
 
+  
+
 }
 
 
@@ -78,7 +80,7 @@ function App() {
         <form className="app__signUp">
 
         <center>
-        <img className= "app__headerImage" alt="modalogo" src="soapboxlogo.jpg" />
+        <img alt="modalogo" src="soapboxlogo.jpg" />
 
         </center>
 
@@ -103,7 +105,7 @@ function App() {
       onChange={(e) => setPassword(e.target.value)}
       />
 
-      <Button onClick={signUp()}>Login</Button>
+      <Button type="submit" onClick={signUp()}>Login</Button>
 
 
         </form>
