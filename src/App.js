@@ -54,19 +54,8 @@ function App() {
       if (authUser){
         console.log(authUser);
         setUser(authUser);
-
-        if(authUser.displayName){
-
-        }
-        else{
-          return authUser.updateProfile({
-            displayName: username, 
-          });
-        }
-
       }
-
-      else{
+     else{
         setUser(null);
 
       }
@@ -98,8 +87,16 @@ function App() {
   const signUp = (e) => {
 
     e.preventDefault();
-    auth.createUserWithEmailAndPassword(email,password);
-    auth.catch((error) => alert(error.message));
+    auth
+    .createUserWithEmailAndPassword(email,password)
+    .then((authUser) =>{
+      return authUser.user.updateProfile({
+        displayName: username
+      })
+    })
+    .catch((error) => {alert(error.message)});
+
+    
   
   }
 
@@ -141,7 +138,7 @@ function App() {
       onChange={(e) => setPassword(e.target.value)}
       />
 
-      <Button type="submit" onClick={signUp}>Login</Button>
+      <Button type="submit" onClick={signUp}>Sign Up</Button>
 
 
         </form>
