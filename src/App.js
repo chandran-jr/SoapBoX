@@ -45,6 +45,38 @@ function App() {
   const [username,setUsername] = useState('');
   const [email,setEmail] = useState('');
   const [password,setPassword] = useState('');
+  const [user,setUser] = useState(null);
+
+
+  useEffect(() => {
+
+    const unsubscribe =auth.onAuthStateChanged((authUser)=> {
+      if (authUser){
+        console.log(authUser);
+        setUser(authUser);
+
+        if(authUser.displayName){
+
+        }
+        else{
+          return authUser.updateProfile({
+            displayName: username, 
+          });
+        }
+
+      }
+
+      else{
+        setUser(null);
+
+      }
+    })
+
+    return () => {
+      unsubscribe();
+    }; 
+
+  }, [username, user]);
 
 
 
@@ -63,11 +95,11 @@ function App() {
   },[]);
 
 
-  const signUp = (event) => {
+  const signUp = (e) => {
 
-    event.preventDefault();
+    e.preventDefault();
     auth.createUserWithEmailAndPassword(email,password);
-    auth.catch((error) => alert(error.message))
+    auth.catch((error) => alert(error.message));
   
   }
 
@@ -109,7 +141,7 @@ function App() {
       onChange={(e) => setPassword(e.target.value)}
       />
 
-      <Button type="submit" onClick={signUp()}>Login</Button>
+      <Button type="submit" onClick={signUp}>Login</Button>
 
 
         </form>
