@@ -1,8 +1,7 @@
 # Getting Started with Create React App  
 
 
-## SoapBoX 
-<img src = "soapboxlogo.jpg">
+# SoapBoX  <img src = "soapboxlogo.jpg">
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
