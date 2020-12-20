@@ -57,7 +57,7 @@ function App() {
       setPosts(snapshot.docs.map(doc => ({
         id: doc.id,
          post: doc.data()
-        
+         
         }
         
         )));
@@ -110,7 +110,7 @@ function App() {
 
     <div className="app__header">
 
-      <img className="app__headerImage" src="soapbox.svg" alt="soapboxlogo" />
+      <img className="app__headerImage" src="soapboxlogo.svg" alt="soapboxlogo" />
 
 
 
