@@ -41,6 +41,7 @@ function App() {
   const classes = useStyles();
   const [posts,setPosts] = useState([]);
   const [modalStyle] = React.useState(getModalStyle);
+  const [openSignIn, setOpenSignIn] = useState(false);
   const [open,setOpen] = useState(false);
   const [username,setUsername] = useState('');
   const [email,setEmail] = useState('');
@@ -96,8 +97,20 @@ function App() {
     })
     .catch((error) => {alert(error.message)});
 
+    setOpen(false);
+
     
   
+  }
+
+  const signIn = (e) =>{
+    e.preventDefault();
+
+    auth
+    .signInWithEmailAndPassword(email,password)
+    .catch((error) => alert(error.message));
+
+    setOpenSignIn(false);
   }
 
   return (
@@ -145,17 +158,63 @@ function App() {
 
         </div>
 
-      </Modal>
+</Modal>
+
+<Modal
+        open={openSignIn}
+        onClose={() => setOpenSignIn(false)}>
+
+
+      <div style={modalStyle} className={classes.paper}>
+
+        <form className="app__signUp">
+
+        <center>
+        <img alt="modalogo" src="soapboxlogo.jpg" />
+
+        </center>
+
+      <Input
+      placeholder="Email"
+      type="email"
+      value={email}
+      onChange={(e) => setEmail(e.target.value)}
+      />
+
+      <Input
+      placeholder="Password"
+      type="password"
+      value={password}
+      onChange={(e) => setPassword(e.target.value)}
+      />
+
+      <Button type="submit" onClick={signIn}>Sign In</Button>
+
+
+        </form>
+
+        </div>
+
+</Modal>
 
     <div className="app__header">
 
       <img className="app__headerImage" src="soapboxlogo.svg" alt="soapboxlogo" />
 
 
-
+    {user ? (
+    <Button onClick={() => auth.signOut()}>Logout</Button>
+    ): (
+      <div className="app__loginContainer">
+        <Button onClick={() => setOpenSignIn(true)}>Sign In</Button>
+        <Button onClick={() => setOpen(true)}>Sign Up</Button>
     </div>
 
-    <Button onClick={() => setOpen(true)}>Sign Up</Button>
+    )}
+
+</div>
+
+
 
     {
 
