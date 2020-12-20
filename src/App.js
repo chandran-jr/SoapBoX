@@ -118,6 +118,16 @@ function App() {
   return (
     <div className="App">
 
+{user?.displayName ? (
+        <div className="app__upload">
+          <ImageUpload username={user.displayName} />
+        </div>
+      ) : (
+        <center>
+          <h3>Login to upload</h3>
+        </center>
+      )}
+
 <Modal
         open={open}
         onClose={() => setOpen(false)}>
@@ -232,16 +242,6 @@ posts.map(({id, post}) => (
 
  </div>
 
-
-{user?.displayName ? (
-        <div className="app__upload">
-          <ImageUpload username={user.displayName} />
-        </div>
-      ) : (
-        <center>
-          <h3>Login to upload</h3>
-        </center>
-      )}
 
      
     
