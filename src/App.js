@@ -214,11 +214,11 @@ function App() {
       <img className="app__headerImage" src="soapboxlogo.svg" alt="soapboxlogo" />
 
       {user ? (
-    <Button onClick={() => auth.signOut()}>Logout</Button>
+    <Button className="buttons" onClick={() => auth.signOut()}>Logout</Button>
     ): (
       <div className="app__loginContainer">
-        <Button onClick={() => setOpenSignIn(true)}>Login</Button>
-        <Button onClick={() => setOpen(true)}>Sign Up</Button>
+        <Button className="buttons" onClick={() => setOpenSignIn(true)}>Login</Button>
+        <Button className="buttons" onClick={() => setOpen(true)}>Sign Up</Button>
     </div>
 
     )}

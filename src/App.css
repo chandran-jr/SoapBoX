@@ -7,7 +7,7 @@
 }
 
 .app__headerImage{
-  width: 17%;
+  width: 18.5%;
   height: auto;
   margin-left: 40%;
   object-fit: contain;
@@ -30,9 +30,6 @@
   
 }
 
-Button{
-  background-color: rgb(131, 131, 245);
-}
 
 .app__posts{
   padding: 15px;
