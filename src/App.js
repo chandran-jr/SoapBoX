@@ -118,16 +118,6 @@ function App() {
   return (
     <div className="App">
 
-    {user?.displayName ? (
-        <div className="app__upload">
-          <ImageUpload username={user.displayName} />
-        </div>
-      ) : (
-        <center>
-          <h3>Login to upload</h3>
-        </center>
-      )}
-
 <Modal
         open={open}
         onClose={() => setOpen(false)}>
@@ -213,32 +203,45 @@ function App() {
 
       <img className="app__headerImage" src="soapboxlogo.svg" alt="soapboxlogo" />
 
-
-    {user ? (
+      {user ? (
     <Button onClick={() => auth.signOut()}>Logout</Button>
     ): (
       <div className="app__loginContainer">
-        <Button onClick={() => setOpenSignIn(true)}>Sign In</Button>
+        <Button onClick={() => setOpenSignIn(true)}>Login</Button>
         <Button onClick={() => setOpen(true)}>Sign Up</Button>
     </div>
 
     )}
 
+
 </div>
 
 
+ <div className="app__posts">
 
-    {
+ {
 
-    posts.map(({id, post}) => (
+posts.map(({id, post}) => (
 
-      <Post key={id} username= {post.username} caption = {post.caption} imageUrl = {post.imageUrl} />
+  <Post key={id} username= {post.username} caption = {post.caption} imageUrl = {post.imageUrl} />
 
-    ))
+))
 
 }
 
 
+ </div>
+
+
+{user?.displayName ? (
+        <div className="app__upload">
+          <ImageUpload username={user.displayName} />
+        </div>
+      ) : (
+        <center>
+          <h3>Login to upload</h3>
+        </center>
+      )}
 
      
     
