@@ -74,9 +74,13 @@ function App() {
 
 
       <div style={modalStyle} className={classes.paper}>
-      
-      <center>
+
+        <form className="app__signUp">
+
+        <center>
         <img className= "app__headerImage" alt="modalogo" src="soapboxlogo.jpg" />
+
+        </center>
 
       <Input
       placeholder="Username"
@@ -102,9 +106,9 @@ function App() {
       <Button onClick={signUp()}>Login</Button>
 
 
-      </center>
+        </form>
 
-    </div>
+        </div>
 
       </Modal>
 
